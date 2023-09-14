@@ -9,7 +9,7 @@ import java.io.File
 fun Route.openImage() {
 
     get ("/image/open") {
-        val file = File("src/main/kotlin/org/camrent/database/image/camera/new_image.jpg")
+        val file = File("src/main/kotlin/org/camrent/database/image/other/video.mp4")
 
         // ตรวจสอบว่าไฟล์มีอยู่จริงหรือไม่
         if (file.exists()) {
