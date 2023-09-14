@@ -13,6 +13,7 @@ fun Route.openImage() {
 
         // ตรวจสอบว่าไฟล์มีอยู่จริงหรือไม่
         if (file.exists()) {
+            call.response.headers.append("media", "ลุงเริง")
             call.respondFile(file)
         } else {
             // หากไม่พบไฟล์ ให้ส่ง HTTP 404 Not Found
