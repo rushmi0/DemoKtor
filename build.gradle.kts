@@ -42,7 +42,7 @@ dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
 
     // https://mvnrepository.com/artifact/io.ktor/ktor-jackson
-    implementation("io.ktor:ktor-jackson:1.5.3")
+    implementation("io.ktor:ktor-jackson:1.6.8")
 
     // https://mvnrepository.com/artifact/org.jetbrains.exposed/exposed-core
     implementation("org.jetbrains.exposed:exposed-core:0.41.1")
