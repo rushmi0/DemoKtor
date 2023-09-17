@@ -25,6 +25,25 @@ repositories {
 
 dependencies {
 
+    implementation("io.ktor:ktor-server-core-jvm")
+    implementation("io.ktor:ktor-server-openapi")
+    implementation("io.ktor:ktor-server-call-logging-jvm")
+    implementation("io.ktor:ktor-server-websockets-jvm")
+    implementation("io.ktor:ktor-server-html-builder-jvm")
+    implementation("io.ktor:ktor-server-content-negotiation-jvm")
+    implementation("io.ktor:ktor-server-host-common-jvm")
+    implementation("io.ktor:ktor-serialization-kotlinx-json-jvm")
+    implementation("io.ktor:ktor-server-auth-jvm")
+    implementation("io.ktor:ktor-server-auth-jwt-jvm")
+    implementation("io.ktor:ktor-server-sessions-jvm")
+    implementation("io.ktor:ktor-server-netty-jvm")
+    implementation("ch.qos.logback:logback-classic:$logback_version")
+    testImplementation("io.ktor:ktor-server-tests-jvm")
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
+
+    // https://mvnrepository.com/artifact/io.ktor/ktor-jackson
+    implementation("io.ktor:ktor-jackson:1.5.3")
+
     // https://mvnrepository.com/artifact/org.jetbrains.exposed/exposed-core
     implementation("org.jetbrains.exposed:exposed-core:0.41.1")
 
@@ -44,7 +63,7 @@ dependencies {
     implementation("org.json:json:20230227")
 
     // https://mvnrepository.com/artifact/org.glassfish/javax.json
-    implementation("org.glassfish:javax.json:1.1.4")
+    // implementation("org.glassfish:javax.json:1.1.4")
 
     // https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-serialization-json-jvm
     runtimeOnly("org.jetbrains.kotlinx:kotlinx-serialization-json-jvm:1.3.0")
@@ -52,19 +71,11 @@ dependencies {
     // https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc
     implementation("org.xerial:sqlite-jdbc:3.42.0.0")
 
-    implementation("io.ktor:ktor-server-core-jvm")
-    implementation("io.ktor:ktor-server-openapi")
-    implementation("io.ktor:ktor-server-call-logging-jvm")
-    implementation("io.ktor:ktor-server-websockets-jvm")
-    implementation("io.ktor:ktor-server-html-builder-jvm")
-    implementation("io.ktor:ktor-server-content-negotiation-jvm")
-    implementation("io.ktor:ktor-server-host-common-jvm")
-    implementation("io.ktor:ktor-serialization-kotlinx-json-jvm")
-    implementation("io.ktor:ktor-server-auth-jvm")
-    implementation("io.ktor:ktor-server-auth-jwt-jvm")
-    implementation("io.ktor:ktor-server-sessions-jvm")
-    implementation("io.ktor:ktor-server-netty-jvm")
-    implementation("ch.qos.logback:logback-classic:$logback_version")
-    testImplementation("io.ktor:ktor-server-tests-jvm")
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
+    // https://mvnrepository.com/artifact/org.ktorm/ktorm-core
+    // implementation("org.ktorm:ktorm-core:3.5.0")
+
+    // https://mvnrepository.com/artifact/org.ktorm/ktorm-core
+    implementation("org.ktorm:ktorm-core:3.4.1")
+
+
 }
