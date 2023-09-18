@@ -1,10 +1,11 @@
 package org.camrent.database.repository
 
 import org.camrent.database.service.CustomersForm
+import org.camrent.utils.BaseResponse
 
 interface CustomersRepository {
 
-    suspend fun signUpCustomer(form: CustomersForm)
-    suspend fun signInCustomer(userName: String, pass: String)
+    suspend fun signUpCustomer(form: CustomersForm): BaseResponse<Any>
+    suspend fun signInCustomer(userName: String, pass: String): BaseResponse<Any>
 
 }

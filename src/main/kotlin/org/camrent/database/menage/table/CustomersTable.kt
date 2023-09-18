@@ -1,6 +1,6 @@
 package org.camrent.database.menage.table
 
-import org.camrent.database.menage.table.AddressesTable.references
+
 import org.jetbrains.exposed.sql.Table
 
 object CustomersTable : Table("Customers") {

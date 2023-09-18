@@ -9,6 +9,7 @@ import org.jetbrains.exposed.sql.SchemaUtils
 import org.jetbrains.exposed.sql.transactions.transaction
 
 import org.camrent.database.menage.table.AddressesTable
+import org.camrent.database.menage.table.CustomersTable
 import org.camrent.database.menage.table.PeopleTable
 
 
@@ -19,6 +20,7 @@ object Database {
         transaction {
             SchemaUtils.create(PeopleTable)
             SchemaUtils.create(AddressesTable)
+            SchemaUtils.create(CustomersTable)
         }
     }
 
