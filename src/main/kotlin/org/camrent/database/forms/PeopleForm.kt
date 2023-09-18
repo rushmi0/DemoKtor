@@ -1,4 +1,4 @@
-package org.camrent.database.service
+package org.camrent.database.forms
 
 data class PeopleForm(
     val peopleID: String,

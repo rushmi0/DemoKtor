@@ -1,6 +1,6 @@
 package org.camrent.database.repository
 
-import org.camrent.database.service.CustomersForm
+import org.camrent.database.forms.CustomersForm
 import org.camrent.utils.BaseResponse
 
 interface CustomersRepository {
