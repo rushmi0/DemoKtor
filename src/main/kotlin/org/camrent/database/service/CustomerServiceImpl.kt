@@ -3,7 +3,7 @@ package org.camrent.database.service
 import org.camrent.database.forms.CustomersForm
 import org.camrent.database.menage.Database.dbQuery
 import org.camrent.database.menage.table.CustomersTable
-import org.camrent.database.models.CustomersField
+import org.camrent.database.field.CustomersField
 import org.jetbrains.exposed.sql.ResultRow
 import org.jetbrains.exposed.sql.insert
 import org.jetbrains.exposed.sql.select

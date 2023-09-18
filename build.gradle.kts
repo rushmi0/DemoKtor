@@ -41,6 +41,13 @@ dependencies {
     testImplementation("io.ktor:ktor-server-tests-jvm")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
 
+
+    implementation("io.ktor:ktor-client-core:1.6.3")
+    implementation("io.ktor:ktor-client-json:1.6.3")
+    implementation("io.ktor:ktor-client-cio:1.6.3")
+
+    implementation("io.ktor:ktor-client-apache:1.6.3")
+
     // https://mvnrepository.com/artifact/io.ktor/ktor-jackson
     implementation("io.ktor:ktor-jackson:1.6.8")
 

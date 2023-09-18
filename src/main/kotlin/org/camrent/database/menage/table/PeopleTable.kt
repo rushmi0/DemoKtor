@@ -1,7 +1,7 @@
 package org.camrent.database.menage.table
 
-import org.jetbrains.exposed.sql.Table
 
+import org.jetbrains.exposed.sql.Table
 
 object PeopleTable :  Table("People") {
 

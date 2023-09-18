@@ -1,7 +1,7 @@
 package org.camrent.database.service
 
 import org.camrent.database.forms.CustomersForm
-import org.camrent.database.models.CustomersField
+import org.camrent.database.field.CustomersField
 
 interface CustomerService {
 

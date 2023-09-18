@@ -1,4 +1,4 @@
-package org.camrent.database.models
+package org.camrent.database.field
 
 data class CustomersField(
     val customerID: String,
