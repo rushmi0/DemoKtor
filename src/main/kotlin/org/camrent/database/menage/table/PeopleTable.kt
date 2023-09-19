@@ -1,6 +1,7 @@
 package org.camrent.database.menage.table
 
 
+import org.camrent.database.menage.table.AddressesTable.nullable
 import org.jetbrains.exposed.sql.Table
 
 object PeopleTable :  Table("People") {
@@ -10,7 +11,7 @@ object PeopleTable :  Table("People") {
     val lastName = varchar("LastName", 256)
     val email = varchar("Email", 256)
     val phoneNumber = varchar("PhoneNumber", 256)
-    val addressID = varchar("AddressID", 256).references(AddressesTable.addressID)
+    val addressID = varchar("AddressID", 256).references(AddressesTable.addressID).nullable()
 
     override val primaryKey = PrimaryKey(personID)
 }

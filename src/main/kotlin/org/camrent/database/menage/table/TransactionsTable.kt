@@ -10,7 +10,7 @@ object TransactionsTable : Table("Transactions") {
     val status = varchar("Status", 256)
     val timeSpam = datetime("TimeSpam")
     val date = datetime("Date")
-    val orderID = varchar("OrderID", 256).references(OrderContractธTable.oderID)
+    val orderID = varchar("OrderID", 256).references(OrderContractTable.orderID)
 
     override val primaryKey = PrimaryKey(txID)
 }
