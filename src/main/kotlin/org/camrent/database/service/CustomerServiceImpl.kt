@@ -1,5 +1,6 @@
 package org.camrent.database.service
 
+
 import org.camrent.database.forms.CustomersForm
 import org.camrent.database.menage.Database.dbQuery
 import org.camrent.database.menage.table.CustomersTable
@@ -23,7 +24,6 @@ class CustomerServiceImpl : CustomerService {
                 it[personID] = form.personID
             }
         }
-
         // คืนค่า CustomersField จากผลลัพธ์ของ INSERT statement
         return statement?.resultedValues?.get(0)?.let { rowCustomers(it) }
     }

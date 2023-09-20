@@ -1,7 +1,6 @@
 package org.camrent.database.menage.table
 
 import org.jetbrains.exposed.sql.Table
-import org.jetbrains.exposed.sql.javatime.datetime
 
 object CreditScoreTable : Table("CreditScore") {
     val scoreID = varchar("ScoreID", 256)

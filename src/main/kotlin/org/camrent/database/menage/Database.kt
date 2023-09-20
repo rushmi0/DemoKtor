@@ -4,13 +4,10 @@ import com.zaxxer.hikari.HikariConfig
 import com.zaxxer.hikari.HikariDataSource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import org.camrent.database.menage.table.*
 import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.SchemaUtils
 import org.jetbrains.exposed.sql.transactions.transaction
-
-import org.camrent.database.menage.table.AddressesTable
-import org.camrent.database.menage.table.CustomersTable
-import org.camrent.database.menage.table.PeopleTable
 
 
 object Database {
@@ -18,9 +15,15 @@ object Database {
     fun initialize() {
         Database.connect(hikariConfig())
         transaction {
-            SchemaUtils.create(PeopleTable)
             SchemaUtils.create(AddressesTable)
+            SchemaUtils.create(CreditScoreTable)
             SchemaUtils.create(CustomersTable)
+            SchemaUtils.create(FineTable)
+            SchemaUtils.create(OrderContractTable)
+            SchemaUtils.create(PeopleTable)
+            SchemaUtils.create(ProductsTable)
+            SchemaUtils.create(StoresTable)
+            SchemaUtils.create(TransactionsTable)
         }
     }
 
