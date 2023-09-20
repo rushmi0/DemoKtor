@@ -1,7 +1,7 @@
 package org.camrent.database.service
 
 
-import org.camrent.database.forms.CustomersForm
+import  org.camrent.database.forms.CustomersForm
 import org.camrent.database.menage.Database.dbQuery
 import org.camrent.database.menage.table.CustomersTable
 import org.camrent.database.field.CustomersField
@@ -12,6 +12,9 @@ import org.jetbrains.exposed.sql.statements.InsertStatement
 
 class CustomerServiceImpl : CustomerService {
 
+    /**
+     * [ INSERT DATA  ]
+     * */
     override suspend fun signupCustomer(form: CustomersForm): CustomersField? {
         var statement: InsertStatement<Number>? = null
         // เริ่มกระบวนการทำงานแบบ Transaction ของฐานข้อมูล
@@ -21,6 +24,7 @@ class CustomerServiceImpl : CustomerService {
                 it[customerID] = form.customerID
                 it[userName] = form.userName
                 it[profileImage] = form.profileImage
+                it[authKey] = form.authKey
                 it[personID] = form.personID
             }
         }
@@ -29,7 +33,10 @@ class CustomerServiceImpl : CustomerService {
     }
 
 
-    // ฟังก์ชันสำหรับค้นหาข้อมูลลูกค้าจากชื่อผู้ใช้
+    /**
+     * [ SELECT DATA ]
+     *  ฟังก์ชันสำหรับค้นหาข้อมูลลูกค้าจากชื่อผู้ใช้
+     * */
     override suspend fun findUserByUserName(userName: String): CustomersField? {
         // ค้นหาข้อมูลลูกค้าจากชื่อผู้ใช้
         return dbQuery {
@@ -49,6 +56,8 @@ class CustomerServiceImpl : CustomerService {
                 customerID = it[CustomersTable.customerID],
                 userName = it[CustomersTable.userName],
                 profileImage = it[CustomersTable.profileImage],
+                authKey = it[CustomersTable.authKey],
+                createAt = it[CustomersTable.createAt],
                 personID = it[CustomersTable.personID]
             )
         }

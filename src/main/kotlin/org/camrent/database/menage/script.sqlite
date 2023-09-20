@@ -19,6 +19,7 @@ CREATE TABLE IF NOT EXISTS Customers
     UserName     TEXT        NOT NULL UNIQUE,
     ProfileImage TEXT,
     AuthKey      TEXT        NOT NULL,
+    CreateAccountDate DATETIME DEFAULT (strftime('%H:%M:%S', 'now')),
     PersonID     TEXT UNIQUE NOT NULL,
     FOREIGN KEY (PersonID) REFERENCES People (PersonID)
 );
@@ -31,6 +32,7 @@ CREATE TABLE IF NOT EXISTS Stores
     ProfileImage  TEXT,
     PaymentMethod TEXT,
     AuthKey       TEXT,
+    CreateAccountDate DATETIME DEFAULT (strftime('%H:%M:%S', 'now')),
     PersonID      TEXT UNIQUE NOT NULL,
     FOREIGN KEY (PersonID) REFERENCES People (PersonID)
 );
@@ -202,13 +204,13 @@ VALUES
     ('OD-00005', 2, 30, 'CTM-00005', 'ADDR-00005', 'PD-00005');
 
 -- เพิ่มข้อมูลในตาราง Transactions
-INSERT INTO Transactions (TxID, TotalPrice, Status, TimeSpam, Date, OrderID)
+INSERT INTO Transactions (TxID, TotalPrice, Status, OrderID)
 VALUES
-    ('TX-00001', 2000, 'Completed', '10:15:30', '2023-09-10', 'OD-00001'),
-    ('TX-00002', 1500, 'Completed', '12:30:45', '2023-09-10', 'OD-00002'),
-    ('TX-00003', 500, 'Completed', '14:45:15', '2023-09-10', 'OD-00003'),
-    ('TX-00004', 4000, 'Processing', '16:00:00', '2023-09-10', 'OD-00004'),
-    ('TX-00005', 1800, 'Completed', '18:15:20', '2023-09-10', 'OD-00005');
+    ('TX-00001', 2000, 'Completed', 'OD-00001'),
+    ('TX-00002', 1500, 'Completed', 'OD-00002'),
+    ('TX-00003', 500, 'Completed', 'OD-00003'),
+    ('TX-00004', 4000, 'Processing', 'OD-00004'),
+    ('TX-00005', 1800, 'Completed', 'OD-00005');
 
 -- เพิ่มข้อมูลในตาราง Products
 INSERT INTO Products (ProductID, ProductName, Image1, Image2, Image3, Image4, Type, Price, SpecDetail, DESC, ProductStatus, StoreID)
@@ -220,13 +222,13 @@ VALUES
     ('PD-00005', 'Product E', NULL, NULL, NULL, NULL, 'Type B', 80, '{"Color": "Black", "Size": "M"}', 'Description E', 'Available', 'ST-00005');
 
 -- เพิ่มข้อมูลในตาราง Fine
-INSERT INTO Fine (FineID, TimeSpam, Date, Description, Image1, Image2, Image3, Image4, PenaltyFee, Status, CustomerID, StoreID, ProductID)
+INSERT INTO Fine (FineID, TimeSpam, Description, Image1, Image2, Image3, Image4, PenaltyFee, Status, CustomerID, StoreID, ProductID)
 VALUES
-    ('FN-00001', '09:30:00', '2023-09-10', 'Late payment', NULL, NULL, NULL, NULL, 100, 'Paid', 'CTM-00001', 'ST-00001', 'PD-00001'),
-    ('FN-00002', '10:45:00', '2023-09-10', 'Late payment', NULL, NULL, NULL, NULL, 50, 'Paid', 'CTM-00002', 'ST-00002', 'PD-00002'),
-    ('FN-00003', '11:00:00', '2023-09-10', 'Late payment', NULL, NULL, NULL, NULL, 30, 'Paid', 'CTM-00003', 'ST-00003', 'PD-00003'),
-    ('FN-00004', '11:15:00', '2023-09-10', 'Late payment', NULL, NULL, NULL, NULL, 200, 'Unpaid', 'CTM-00004', 'ST-00004', 'PD-00004'),
-    ('FN-00005', '11:30:00', '2023-09-10', 'Late payment', NULL, NULL, NULL, NULL, 80, 'Paid', 'CTM-00005', 'ST-00005', 'PD-00005');
+    ('FN-00001', '09:30:00', 'Late payment', NULL, NULL, NULL, NULL, 100, 'Paid', 'CTM-00001', 'ST-00001', 'PD-00001'),
+    ('FN-00002', '10:45:00', 'Late payment', NULL, NULL, NULL, NULL, 50, 'Paid', 'CTM-00002', 'ST-00002', 'PD-00002'),
+    ('FN-00003', '11:00:00',  'Late payment', NULL, NULL, NULL, NULL, 30, 'Paid', 'CTM-00003', 'ST-00003', 'PD-00003'),
+    ('FN-00004', '11:15:00', 'Late payment', NULL, NULL, NULL, NULL, 200, 'Unpaid', 'CTM-00004', 'ST-00004', 'PD-00004'),
+    ('FN-00005', '11:30:00', 'Late payment', NULL, NULL, NULL, NULL, 80, 'Paid', 'CTM-00005', 'ST-00005', 'PD-00005');
 
 
 SELECT * FROM Address;

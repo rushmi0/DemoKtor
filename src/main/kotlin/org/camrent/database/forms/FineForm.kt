@@ -1,5 +1,8 @@
 package org.camrent.database.forms
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class FineForm(
     val fineID: String,
     val timeSpam: String,

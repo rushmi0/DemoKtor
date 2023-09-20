@@ -1,5 +1,8 @@
 package org.camrent.database.field
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class ProductsField(
     val productID: String,
     val productName: String,

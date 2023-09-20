@@ -1,5 +1,9 @@
 package org.camrent.database.field
 
+import kotlinx.serialization.Serializable
+
+
+@Serializable
 data class FineField(
     val fineID: String,
     val timeSpam: String,

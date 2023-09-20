@@ -1,7 +1,9 @@
 package org.camrent.database.forms
 
-import kotlinx.html.I
+import kotlinx.serialization.Serializable
 
+
+@Serializable
 data class CreditScoreForm(
     val scoreID: String,
     val score: Int,

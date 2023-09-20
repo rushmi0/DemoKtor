@@ -5,6 +5,7 @@ data class StoresField(
     val storeName: String,
     val profileImage: String,
     val paymentMethod: String,
-    val authKey: String,
+    val authKey: String? = null,
+    val createAt: String,
     val personID: String
 )

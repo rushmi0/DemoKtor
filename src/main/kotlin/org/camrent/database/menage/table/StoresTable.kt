@@ -9,6 +9,7 @@ object StoresTable : Table("Stores") {
     val profileImage = varchar("ProfileImage", 256)
     val paymentMethod = varchar("PaymentMethod", 256)
     val authKey = varchar("AuthKey", 256)
+    val createAt = varchar("CreateAccount", 256)
     val personID = varchar("PersonID", 256).references(PeopleTable.personID)
 
     override val primaryKey = PrimaryKey(storeID)

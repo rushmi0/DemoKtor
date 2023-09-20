@@ -1,5 +1,8 @@
 package org.camrent.database.forms
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class StoresForm(
     val storeID: String,
     val storeName: String,
